@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Divs Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .content-div {
+            display: none; /* Initially hidden */
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+        .links a {
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: blue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="links">
+        <a href="#" data-target="#div1">Show Div 1</a>
+        <a href="#" data-target="#div2">Show Div 2</a>
+        <a href="#" data-target="#div3">Show Div 3</a>
+        <a href="#" data-target="#div4">Show Div 4</a>
+        <a href="#" data-target="#div5">Show Div 5</a>
+    </div>
+
+    <div id="div1" class="content-div">This is Div 1 content.</div>
+    <div id="div2" class="content-div">This is Div 2 content.</div>
+    <div id="div3" class="content-div">This is Div 3 content.</div>
+    <div id="div4" class="content-div">This is Div 4 content.</div>
+    <div id="div5" class="content-div">This is Div 5 content.</div>
+
+    <script>
+        $(document).ready(function () {
+            $('.links a').click(function (e) {
+                e.preventDefault(); // Prevent default link behavior
+                $('.content-div').hide(); // Hide all divs
+                $($(this).data('target')).show(); // Show the targeted div
+            });
+        });
+    </script>
+</body>
+</html>
