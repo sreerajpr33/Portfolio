@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -15,7 +18,7 @@
         .sidebar {
             height: 100%;
             width: 250px;
-            background-color: #2c0d6a;
+            background-color: #000000;
             position: fixed;
             top: 0;
             left: 0;
@@ -48,11 +51,12 @@
             transition: 0.3s;
         }
         .sidebar a i {
-            font-size: 20px;
+            font-size: 12px;
             margin-right: 10px;
+            font-family: "IBM Plex Sans", serif;
         }
         .sidebar a:hover {
-            border: 1px solid #ffffff;
+            border: 1px solid #2c0d6a;
             color: #fcfcfc;
         }
         .resume-btn {
@@ -69,6 +73,7 @@
             border-radius: 5px;
             display: inline-block;
             transition: 0.3s;
+            font-family: "IBM Plex Sans", serif;
         }
         .resume-btn a:hover {
             background-color: #ffffff;
@@ -101,9 +106,23 @@
         }
         .home {
             display: block; /* Show home by default */
-            background-color: #f8f9fa;
-            height: 100vh;
+            background-color: #ffffff;
+            height:auto;
         }
+
+        .div1-content{
+            width: 100%;
+            height: 86vh;
+            background-color: #6e35df;
+        }
+        .poster{
+            width: 40vw;
+            height: auto;
+            font-family: "IBM Plex Sans", serif;
+        }
+
+
+
         .about { background-color: aqua; height: 100vh; }
         .portfolio { background-color: lightcoral; height: 100vh; }
         .services { background-color: lightgreen; height: 100vh; }
@@ -112,6 +131,7 @@
             .sidebar {
                 transform: translateX(-250px);
                 transition: transform 0.3s ease;
+                padding-top:55px ;
             }
             .sidebar.show {
                 transform: translateX(0);
@@ -122,6 +142,10 @@
             .content {
                 margin-left: 0;
             }
+            .poster{
+            width: 90%;
+            
+        }
         }
     </style>
 </head>
@@ -155,7 +179,17 @@
 
     <!-- Main Content -->
     <div class="content" id="mainContent">
-        <div id="div1" class="content-div home">Home Content</div>
+        <div id="div1" class="content-div home text-center">
+            <h2>HOME</h2>
+            <div class=" div1-content position-relative">
+              <div class="poster bg-dark text-light p-3 rounded shadow position-absolute top-50 start-50 translate-middle">
+                <h4 class="mt-4">Hi, im Sreeraj p r</h4>
+                <p class="mt-3">Welcome to my portfolio ,This is where creativity meets functionality. Explore my projects, learn about my journey, and discover how I can help bring your ideas to life. Let's create something amazing together!</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
         <div id="div2" class="content-div about">About Content</div>
         <div id="div3" class="content-div portfolio">Portfolio Content</div>
         <div id="div4" class="content-div services">Services Content</div>
