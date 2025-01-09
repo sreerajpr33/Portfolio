@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{url_for('static',filename='css/style.css' )}}">
     <style>
         body {
             margin: 0;
@@ -93,6 +94,8 @@
             border-radius: 5px;
             display: none;
         }
+
+
         .content {
             margin-left: 250px;
             transition: margin-left 0.3s ease;
@@ -104,6 +107,8 @@
             display: none;
             padding: 20px;
         }
+        
+
         .home {
             display: block; /* Show home by default */
             background-color: #ffffff;
@@ -111,16 +116,29 @@
             font-family: "IBM Plex Sans", serif;
         }
 
-        .div1-content{
+        .div1-content {
             width: 100%;
-            height: 86vh;
+            height: 100vh;
             background-color: #cdc9c9;
+            background-image: url('{{ url_for('static', filename='image/flat-lay-workstation-with-copy-space-laptop.jpg') }}');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 1); /* Shadow around the content */
+            position: relative; /* Ensure shadow applies correctly */
+            z-index: 1; /* Ensures it's layered properly */
+            overflow: hidden; /* Prevents child content from spilling out */
         }
+
+        
+
+
         .poster{
             width: 40vw;
             height: auto;
             font-family: "IBM Plex Sans", serif;
         }
+        
 
 
 
@@ -138,17 +156,20 @@
     margin: 0 auto;
     width: 50%; /* Adjust width as needed */
 }
-
 .centered-table td {
     padding: 10px;
-    border: 1px solid #ddd; /* Optional border for table cells */
+     /* Optional border for table cells */
     font-size: 16px;
 }
 
-        .portfolio { background-color: rgb(255, 255, 255); height: 100vh; }
+.portfolio { background-color: rgb(255, 255, 255);
+    height: 100vh; 
+}
 
-        .services { background-color: rgb(255, 255, 255); height: 100vh; }
-        .services {
+.services { background-color: rgb(255, 255, 255);
+    height: 100vh; 
+}
+.services {
     padding: 30px;
 }
 
@@ -195,7 +216,7 @@
     color: #666;
 }
 
-        .contact { background-color: lightyellow; height: 100vh; }
+        .contact { background-color: white; height: 100vh; }
         @media (max-width: 768px) {
             .sidebar {
                 transform: translateX(-250px);
@@ -224,7 +245,7 @@
 
     <!-- Sidebar -->
     <div class="sidebar" id="sidebar">
-        <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile">
+        <img src="{{url_for('static',filename='image/sree.jpg ') }}" alt="Profile Picture" class="profile">
         <a href="#" data-target="#div1">
             <i class="bi bi-house ms-1"></i> Home
         </a>
@@ -249,38 +270,45 @@
     <!-- Main Content -->
     <div class="content" id="mainContent">
         <div id="div1" class="content-div home text-center">
-            <h2>HOME</h2>
-            <div class=" div1-content position-relative">
-              <div class="poster bg-dark text-light p-3 rounded shadow position-absolute top-50 start-50 translate-middle">
-                <h4 class="mt-4">Hi, im Sreeraj p r</h4>
-                <p class="mt-3">Welcome to my portfolio ,This is where creativity meets functionality. Explore my projects, learn about my journey, and discover how I can help bring your ideas to life. Let's create something amazing together!</p>
+            <h2>HOME</h2> 
+            <!-- Hidden heading for accessibility -->
+            <div class="div1-content position-relative text-light">
+                
+                <div class="overlay position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.5);">
+                <div class="text-content position-absolute top-50 start-50 translate-middle text-center p-4 bg-dark rounded shadow">
+                    <h4 class="mt-4">Hi, I'm Sreeraj P R</h4>
+                    <p class="mt-3">Welcome to my portfolio! This is where creativity meets functionality. Explore my projects, learn about my journey, and discover how I can help bring your ideas to life. Let's create something amazing together!</p>
+                </div>
             </div>
             </div>
-          </div>
-          
+        </div>
         </div>
         <div class="content" id="mainContent">
-            <div id="div2" class="content-div about text-center">
-                <h2 class="text-center">ABOUT ME</h2>
+            <div id="div2" class="content-div about text-center" style=" color: white; padding: 20px;">
+                <h2 class="text-center" style=" padding: 10px; border-radius: 5px; color: rgba(0, 0, 0);">ABOUT ME</h2>
                 <div class="div1-content" style="padding-top: 20px;">
-                    Innovative Full-Stack Developer specializing in Python and Django, with a strong focus on building scalable, efficient, and visually appealing web solutions. Passionate about creating user-first designs and optimizing performance.               
-                    <h4 class="mt-5">SKILLS</h4>
+                    <p style="background-color: rgba(0, 0, 0, 0.5);padding: 15px; border-radius: 5px; width: 70vw; margin:auto;">
+                        Innovative Full-Stack Developer specializing in Python and Django, with a strong focus on building scalable, efficient, and visually appealing web solutions. Passionate about creating user-first designs and optimizing performance.
+                    </p>
+                    <h4 class="mt-5" style="background-color:  rgba(0, 0, 0, 0.5); width:30vw; padding: 10px; border-radius: 5px;margin:auto;">SKILLS</h4>
                     <div class="skills-table">
-                        <table class="centered-table">
+                        <table class="centered-table" style="background-color: rgba(0, 0, 0, 0.5); color: white; border-radius: 5px;">
                             <tr>
-                                <td>Leadership and Initiative</td>
+                                <td style="padding: 10px;">Leadership and Initiative</td>
+                            </tr>
+                            <tr >
+                                <td style="padding: 10px;">Communication and Collaboration</td>
                             </tr>
                             <tr>
-                                <td>Communication and Collaboration</td>
+                                <td style="padding: 10px;">Time Management and Organization</td>
                             </tr>
                             <tr>
-                                <td>Time Management and Organization</td>
-                            </tr>
-                            <tr>
-                                <td>Adaptability and Learning</td>
+                                <td style="padding: 10px;">Adaptability and Learning</td>
                             </tr>
                         </table>
-                        <p class="mt-5">here is little bit about my journey in tech !</p>
+                        <p class="mt-5" style="background-color: rgba(0, 0, 0, 0.5);; padding: 15px; border-radius: 5px;">
+                            Here is a little bit about my journey in tech!
+                        </p>
                     </div>
                 </div>
             </div>
@@ -288,121 +316,95 @@
         
         
         <div class="content" id="mainContent">
-            <div id="div3" class="content-div portfolio text-center">
-                <h2>PORTFOLIO</h2>
-                <div class="div1-content d-flex flex-wrap justify-content-center align-items-center gap-3">
-                    <div class="card" style="width: 18rem;">
-                        <img src="your-image-url.jpg" class="card-img-top" alt="Card Image" style="height:30vh;">
-                        <div class="card-body">
-                            name
-                        </div>
-                    </div>
-                    <div class="card" style="width: 18rem;">
-                        <img src="your-image-url.jpg" class="card-img-top" alt="Card Image" style="height:30vh;">
-                        <div class="card-body">
-                            name
-                        </div>
-                    </div>
-                    <div class="card" style="width: 18rem;">
-                        <img src="your-image-url.jpg" class="card-img-top" alt="Card Image" style="height:30vh;">
-                        <div class="card-body">
-                            name
-                        </div>
-                    </div>
-                    <div class="card" style="width: 18rem;">
-                        <img src="your-image-url.jpg" class="card-img-top" alt="Card Image" style="height:30vh;">
-                        <div class="card-body">
-                            name
-                        </div>
-                    </div>
-                    <div class="card" style="width: 18rem;">
-                        <img src="your-image-url.jpg" class="card-img-top" alt="Card Image" style="height:30vh;">
-                        <div class="card-body">
-                            name
-                        </div>
-                    </div>
-                    <div class="card" style="width: 18rem;">
-                        <img src="your-image-url.jpg" class="card-img-top" alt="Card Image" style="height:30vh;">
-                        <div class="card-body">
-                            name
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        
-
-
-        <!-- <div class="services text-center">
-            <h2>Services</h2>
-            <p>
-                Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. 
-                Sit sint consectetur velit. Quisquam quos quisquam cupiditate.
-            </p>
-            <div class="services-container d-flex flex-wrap justify-content-center gap-4">
-                <div class="service-item text-center">
-                    <div class="icon">
-                        <i class="fa fa-laptop-code"></i>
-                    </div>
-                    <h4>Front-End Development</h4>
-                    <p>Creating stunning and responsive interfaces for web applications.</p>
-                </div>
-                
-                <div class="service-item text-center">
-                    <div class="icon">
-                        <i class="fa fa-server"></i>
-                    </div>
-                    <h4>Back-End Development</h4>
-                    <p>Building reliable and scalable server-side solutions.</p>
-                </div>
-                
-                <div class="service-item text-center">
-                    <div class="icon">
-                        <i class="fa fa-link"></i>
-                    </div>
-                    <h4>API Development</h4>
-                    <p>Developing robust APIs for seamless system integrations.</p>
-                </div>
-            </div>
-        </div> -->
-        <div class="content" id="mainContent">
-            <div id="div4" class="content-div service text-center">
-                <h2>Services</h2>
-                <div class=" div1-content position-relative" style="padding-top: 20px;">
+            <div id="div3" class="content-div service text-center">
+                <h2>Portfolio</h2>
+                <div class="div1-content position-relative" style="padding-top: 20px;">
                     <div class="services-container d-flex flex-wrap justify-content-center gap-4 mt-5">
                         <!-- Service 1 -->
-                        <div class="service-item text-center">
+                        <div class="service-item text-center" style="background-color: rgba(0, 0, 0, 0.8); color: white; padding: 20px; border-radius: 8px;">
                             <div class="icon">
                                 <i class="fa fa-laptop-code"></i>
                             </div>
-                            <h4>Front-End Development</h4>
-                            <p>Creating stunning and responsive interfaces for web applications.</p>
+                            <img src="{{url_for('static', filename='image/pexels-mstudio-360817-1240892.jpg') }}" alt="" class="img-fluid">
+                            <h4>Footflex</h4>
+                            <p></p>
                         </div>
                         <!-- Service 2 -->
-                        <div class="service-item text-center">
+                        <div class="service-item text-center" style="background-color: rgba(0, 0, 0, 0.8); color: white; padding: 20px; border-radius: 8px;">
                             <div class="icon">
                                 <i class="fa fa-server"></i>
                             </div>
-                            <h4>Back-End Development</h4>
-                            <p>Building reliable and scalable server-side solutions.</p>
+                            <img src="{{url_for('static', filename='image/cheerful-newlyweds-pose-ruins-old-fortress-sunny-day.jpg') }}" alt="" class="img-fluid">
+                            <h4>EventEase</h4>
+                            <p></p>
                         </div>
                         <!-- Service 3 -->
-                        <div class="service-item text-center">
+                        <div class="service-item text-center" style="background-color: rgba(0, 0, 0, 0.8); color: white; padding: 20px; border-radius: 8px;">
                             <div class="icon">
                                 <i class="fa fa-link"></i>
                             </div>
-                            <h4>API Development</h4>
-                            <p>Developing robust APIs for seamless system integrations.</p>
+                            <img src="{{url_for('static', filename='image/Screenshot 2025-01-09 164844.png') }}" alt="" class="img-fluid">
+                            <h4>croma</h4>
+                            <p></p>
                         </div>
                     </div>
                 </div>
-              </div>
             </div>
+        </div>
         
         
-        <div id="div5" class="content-div contact">Contact Content</div>
-    </div>
+        
+
+
+            <div class="content" id="mainContent">
+                <div id="div4" class="content-div service text-center">
+                    <h2>Services</h2>
+                    <div class="div1-content position-relative" style="padding-top: 20px;">
+                        <div class="services-container d-flex flex-wrap justify-content-center gap-4 mt-5">
+                            <!-- Service 1 -->
+                            <div class="service-item text-center" style="background-color: rgba(0, 0, 0, 0.8); color: white; padding: 20px; border-radius: 8px;">
+                                <div class="icon">
+                                    <!-- Bootstrap icon for Front-End Development -->
+                                    <i class="bi bi-laptop" style="font-size: 3rem;"></i>
+                                </div>
+                                <h4>Front-End Development</h4>
+                                <p style="color: white;">Creating stunning and responsive interfaces for web applications.</p>
+                            </div>
+                            <!-- Service 2 -->
+                            <div class="service-item text-center" style="background-color: rgba(0, 0, 0, 0.8); color: white; padding: 20px; border-radius: 8px;">
+                                <div class="icon">
+                                    <!-- Bootstrap icon for Back-End Development -->
+                                    <i class="bi bi-server" style="font-size: 3rem;"></i>
+                                </div>
+                                <h4>Back-End Development</h4>
+                                <p style="color: white;">Building reliable and scalable server-side solutions.</p>
+                            </div>
+                            <!-- Service 3 -->
+                            <div class="service-item text-center" style="background-color: rgba(0, 0, 0, 0.8); color: white; padding: 20px; border-radius: 8px;">
+                                <div class="icon">
+                                    <!-- Bootstrap icon for API Development -->
+                                    <i class="bi bi-code-slash" style="font-size: 3rem;"></i>
+                                </div>
+                                <h4>API Development</h4>
+                                <p style="color: white;">Developing robust APIs for seamless system integrations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+        
+        
+            <div class="content" id="mainContent">
+                <div id="div5" class="content-div contact text-center">
+                    <h2>CONTACT</h2>
+                    <div class=" div1-content position-relative">
+                        
+                    </div>
+                  </div>
+                  
+                </div>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
