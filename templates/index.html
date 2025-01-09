@@ -118,9 +118,9 @@
 
         .div1-content {
             width: 100%;
-            height: 100vh;
+            height: 86vh;
             background-color: #cdc9c9;
-            background-image: url('{{ url_for('static', filename='image/flat-lay-workstation-with-copy-space-laptop.jpg') }}');
+            background-image: url('{{ url_for('static', filename='image/top-view-workspace-with-laptop-notebook.jpg') }}');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -129,7 +129,19 @@
             z-index: 1; /* Ensures it's layered properly */
             overflow: hidden; /* Prevents child content from spilling out */
         }
-
+        .div1-content2 {
+            width: 100%;
+            height: 90vh;
+            background-color: #cdc9c9;
+            background-image: url('{{ url_for('static', filename='image/top-view-workspace-with-laptop-notebook.jpg') }}');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 1); /* Shadow around the content */
+            position: relative; /* Ensure shadow applies correctly */
+            z-index: 1; /* Ensures it's layered properly */
+            overflow: hidden; /* Prevents child content from spilling out */
+        }
         
 
 
@@ -236,6 +248,10 @@
             width: 90%;
             
         }
+        .div1-content2 {
+            height: 100vh;
+            
+        }
         }
     </style>
 </head>
@@ -285,14 +301,14 @@
         </div>
         <div class="content" id="mainContent">
             <div id="div2" class="content-div about text-center" style=" color: white; padding: 20px;">
-                <h2 class="text-center" style=" padding: 10px; border-radius: 5px; color: rgba(0, 0, 0);">ABOUT ME</h2>
+                <h2 class="text-center" style="  border-radius: 5px; color: rgba(0, 0, 0);">ABOUT ME</h2>
                 <div class="div1-content" style="padding-top: 20px;">
-                    <p style="background-color: rgba(0, 0, 0, 0.5);padding: 15px; border-radius: 5px; width: 70vw; margin:auto;">
+                    <p style="background-color: rgba(0, 0, 0, 0.8);padding: 15px; border-radius: 5px; width: 70vw; margin:auto;">
                         Innovative Full-Stack Developer specializing in Python and Django, with a strong focus on building scalable, efficient, and visually appealing web solutions. Passionate about creating user-first designs and optimizing performance.
                     </p>
-                    <h4 class="mt-5" style="background-color:  rgba(0, 0, 0, 0.5); width:30vw; padding: 10px; border-radius: 5px;margin:auto;">SKILLS</h4>
+                    <h4 class="mt-5" style="background-color:  rgba(0, 0, 0, 0.8); width:30vw; padding: 10px; border-radius: 5px;margin:auto;">SKILLS</h4>
                     <div class="skills-table">
-                        <table class="centered-table" style="background-color: rgba(0, 0, 0, 0.5); color: white; border-radius: 5px;">
+                        <table class="centered-table" style="background-color: rgba(0, 0, 0, 0.8); color: white; border-radius: 5px;">
                             <tr>
                                 <td style="padding: 10px;">Leadership and Initiative</td>
                             </tr>
@@ -306,19 +322,18 @@
                                 <td style="padding: 10px;">Adaptability and Learning</td>
                             </tr>
                         </table>
-                        <p class="mt-5" style="background-color: rgba(0, 0, 0, 0.5);; padding: 15px; border-radius: 5px;">
+                        <p class="mt-5" style="background-color: rgba(0, 0, 0, 0.5); padding: 15px; border-radius: 5px;">
                             Here is a little bit about my journey in tech!
                         </p>
                     </div>
                 </div>
             </div>
         </div>
-        
-        
+
         <div class="content" id="mainContent">
             <div id="div3" class="content-div service text-center">
                 <h2>Portfolio</h2>
-                <div class="div1-content position-relative" style="padding-top: 20px;">
+                <div class="div1-content2 position-relative" style="padding-top: 20px;">
                     <div class="services-container d-flex flex-wrap justify-content-center gap-4 mt-5">
                         <!-- Service 1 -->
                         <div class="service-item text-center" style="background-color: rgba(0, 0, 0, 0.8); color: white; padding: 20px; border-radius: 8px;">
@@ -344,7 +359,15 @@
                                 <i class="fa fa-link"></i>
                             </div>
                             <img src="{{url_for('static', filename='image/Screenshot 2025-01-09 164844.png') }}" alt="" class="img-fluid">
-                            <h4>croma</h4>
+                            <h4>croma clone</h4>
+                            <p></p>
+                        </div>
+                        <div class="service-item text-center" style="background-color: rgba(0, 0, 0, 0.8); color: white; padding: 20px; border-radius: 8px;">
+                            <div class="icon">
+                                <i class="fa fa-link"></i>
+                            </div>
+                            <img src="{{url_for('static', filename='image/close-up-hands-woman-wearing-traditional-sari-garment.jpg') }}" alt="" class="img-fluid">
+                            <h4>Chempakam clone</h4>
                             <p></p>
                         </div>
                     </div>
@@ -399,12 +422,31 @@
             <div class="content" id="mainContent">
                 <div id="div5" class="content-div contact text-center">
                     <h2>CONTACT</h2>
-                    <div class=" div1-content position-relative">
-                        
+                    <div class="div1-content position-relative d-flex justify-content-center align-items-center" style="min-height: 60vh;">
+                        <form  method="POST" class="bg-dark text-light p-4 rounded shadow-lg" style="width: 350px;">
+                            <h4 class="mb-3 text-uppercase text-center">Get In Touch</h4>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter your email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Submit</button>
+                        </form>
                     </div>
-                  </div>
-                  
                 </div>
+            </div>
+            
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
