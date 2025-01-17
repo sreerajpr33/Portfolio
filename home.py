@@ -1,5 +1,7 @@
-from flask import Flask,render_template, request, redirect, url_for
+from flask import Flask, render_template, send_file, request, redirect, url_for
+from pathlib import Path
 import sqlite3
+import os
 app=Flask(__name__)
 
 con=sqlite3.connect("data.db")
@@ -9,7 +11,13 @@ except:
     pass
 @app.route('/')
 def index():
-    return render_template("index.html")    
+    return render_template("index.html")   
+
+# @app.route('/download-resume')
+# def download_resume():
+#     # Assuming resume.pdf is stored in 'static/img' directory
+#     resume_path = Path(__file__).parent / 'static' / 'image' / 'sreerajpr.pdf'
+#     return send_file(resume_path, as_attachment=True) 
 
 
 @app.route('/form', methods=['POST', 'GET'])
