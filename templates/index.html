@@ -249,7 +249,7 @@
             
         }
         .div1-content2 {
-            height: 100vh;
+            height: auto;
             
         }
         }
@@ -382,7 +382,7 @@
             <div class="content" id="mainContent">
                 <div id="div4" class="content-div service text-center">
                     <h2>Services</h2>
-                    <div class="div1-content position-relative" style="padding-top: 20px;">
+                    <div class="div1-content2 position-relative" style="padding-top: 20px;">
                         <div class="services-container d-flex flex-wrap justify-content-center gap-4 mt-5">
                             <!-- Service 1 -->
                             <div class="service-item text-center" style="background-color: rgba(0, 0, 0, 0.8); color: white; padding: 20px; border-radius: 8px;">
@@ -421,31 +421,28 @@
         
             <div class="content" id="mainContent">
                 <div id="div5" class="content-div contact text-center">
-                    <h2>CONTACT</h2>
-                    <div class="div1-content position-relative d-flex justify-content-center align-items-center" style="min-height: 60vh;">
-                        <form  method="POST" class="bg-dark text-light p-4 rounded shadow-lg" style="width: 350px;">
-                            <h4 class="mb-3 text-uppercase text-center">Get In Touch</h4>
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="message" class="form-label">Subject</label>
-                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter your email" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea class="form-control" id="message" name="message" rows="4" placeholder="Write your message here..." required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100">Submit</button>
-                        </form>
+                    <h2>CONTACT</h2> 
+                    <!-- Hidden heading for accessibility -->
+                    <div class="div1-content position-relative text-light">
+                        
+                        <div class="overlay position-absolute top-0 start-0 w-100 h-100" >
+                        <div class="text-content position-absolute top-50 start-50 translate-middle text-center p-4 bg-dark rounded shadow"style="background-color: rgba(0, 0, 0, 0.5 );">
+                            <h2>Contact Me</h2>
+                <p>If you have any questions or opportunities, feel free to reach out!</p>
+                <p>
+                    Email:
+                    <a href="mailto:prsreeraj33@gmail.com" class="btn btn-outline-light">Send me an email</a>
+                </p>
+                <p class="pn">
+                    Phone number:6282687277
+                </p>
+                    </div>
+                    </div>
                     </div>
                 </div>
-            </div>
+                </div>
+            
+            
             
 
     <!-- Scripts -->
